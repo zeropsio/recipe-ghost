@@ -1,0 +1,28 @@
+{
+  "server": {
+    "port": 2368,
+    "host": "0.0.0.0"
+  },
+  "database": {
+    "client": "mysql"
+  },
+  "mail": {
+    "transport": "SMTP",
+    "options": {
+      "host": "mailhog",
+      "port": 1025
+    }
+  },
+  "logging": {
+    "transports": [
+      "stdout"
+    ]
+  },
+  "process": "local",
+  "paths": {
+    "contentPath": "./content"
+  },
+  "storage": {
+    "active": "s3"
+  }
+}
