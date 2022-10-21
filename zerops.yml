@@ -3,8 +3,6 @@ ghost:
     base: [nodejs@16]
     build:
       - |
-        pwd
-        ls -la
         cd ./current
         yarn
         yarn add ghost-storage-adapter-s3
