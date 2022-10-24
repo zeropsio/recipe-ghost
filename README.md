@@ -19,7 +19,7 @@ services:
     type: mariadb@10.4
     mode: NON_HA
     priority: 1
-  - hostname: s3
+  - hostname: storage
     type: object-storage
     objectStorageSize: 2
     priority: 1
@@ -27,14 +27,14 @@ services:
     type: nodejs@16
     envVariables:
       AWS_DEFAULT_REGION: us-east-1
-      AWS_ACCESS_KEY_ID: ${s3_accessKeyId}
-      AWS_SECRET_ACCESS_KEY: ${s3_secretAccessKey}
-      STORAGE_HOSTNAME: ${s3_hostname}
-      STORAGE_BUCKET_PREFIX: ${s3_serviceId|lower}
-      STORAGE_BUCKET_NAME: storage
+      AWS_ACCESS_KEY_ID: ${storage_accessKeyId}
+      AWS_SECRET_ACCESS_KEY: ${storage_secretAccessKey}
+      STORAGE_HOSTNAME: ${storage_hostname}
+      STORAGE_BUCKET_PREFIX: ${storage_serviceId|lower}
+      STORAGE_BUCKET_NAME: ghostdata
       GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET: ${STORAGE_BUCKET_PREFIX}.${STORAGE_BUCKET_NAME}
-      GHOST_STORAGE_ADAPTER_S3_ASSET_HOST: ${s3_apiUrl}/${GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET}
-      GHOST_STORAGE_ADAPTER_S3_ENDPOINT: ${s3_apiUrl}
+      GHOST_STORAGE_ADAPTER_S3_ASSET_HOST: ${storage_apiUrl}/${GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET}
+      GHOST_STORAGE_ADAPTER_S3_ENDPOINT: ${storage_apiUrl}
       GHOST_STORAGE_ADAPTER_S3_FORCE_PATH_STYLE: true
       database__connection__database: ${db_hostname}
       database__connection__host: ${db_hostname}
