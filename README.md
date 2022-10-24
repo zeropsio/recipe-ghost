@@ -4,7 +4,7 @@ Zerops Ghost implementation.
 
 ## Zerops YAML import script
 
-The script is intended to create a new project **ghost-app** with four services represented by hostnames: **db** (fully managed [Zerops MariaDB](https://docs.zerops.io/documentation/services/databases/mariadb.html) database), **s3** (fully managed [Zerops S3-compatible](https://docs.zerops.io/documentation/services/storage/s3.html) object storage), **ghost** ([Zerops Node.js-based](https://docs.zerops.io/documentation/services/runtimes/nodejs.html) Ghost application instance), and **mailhog** ([Zerops Go-based](https://docs.zerops.io/documentation/services/runtimes/golang.html) shadow SMTP server). The **db** and **s3** services are created first with `priority: 1` because they have to exist and run before the runtime services **ghost** and **mailhog** will be built, deployed, and run.
+The script is intended to create a new project **ghost-app** with four services represented by hostnames: **db** (fully managed [Zerops MariaDB](https://docs.zerops.io/documentation/services/databases/mariadb.html) database), **storage** (fully managed [Zerops S3-compatible](https://docs.zerops.io/documentation/services/storage/s3.html) object storage), **ghost** ([Zerops Node.js-based](https://docs.zerops.io/documentation/services/runtimes/nodejs.html) Ghost application instance), and **mailhog** ([Zerops Go-based](https://docs.zerops.io/documentation/services/runtimes/golang.html) shadow SMTP server). The **db** and **storage** services are created first with `priority: 1`. They have to exist and run before the runtime services **ghost** and **mailhog** will be built, deployed, and run.
 
 ```yaml
 project:
