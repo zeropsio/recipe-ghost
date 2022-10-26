@@ -18,7 +18,7 @@ services:
   - hostname: db
     type: mariadb@10.4
     mode: NON_HA
-    priority: 1
+    priority: 2
   - hostname: storage
     type: object-storage
     objectStorageSize: 2
