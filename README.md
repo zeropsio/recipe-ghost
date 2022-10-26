@@ -29,7 +29,7 @@ services:
       AWS_DEFAULT_REGION: us-east-1
       AWS_ACCESS_KEY_ID: ${storage_accessKeyId}
       AWS_SECRET_ACCESS_KEY: ${storage_secretAccessKey}
-      STORAGE_HOSTNAME: ${storage_hostname}
+      STORAGE_HOSTNAME: storage
       STORAGE_BUCKET_PREFIX: ${storage_serviceId|lower}
       STORAGE_BUCKET_NAME: ghostdata
       GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET: ${STORAGE_BUCKET_PREFIX}.${STORAGE_BUCKET_NAME}
