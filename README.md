@@ -30,9 +30,8 @@ services:
       AWS_ACCESS_KEY_ID: ${storage_accessKeyId}
       AWS_SECRET_ACCESS_KEY: ${storage_secretAccessKey}
       STORAGE_HOSTNAME: storage
-      STORAGE_BUCKET_PREFIX: ${storage_serviceId|lower}
       STORAGE_BUCKET_NAME: ghostdata
-      GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET: ${STORAGE_BUCKET_PREFIX}.${STORAGE_BUCKET_NAME}
+      GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET: ${storage_serviceId|lower}.${STORAGE_BUCKET_NAME}
       GHOST_STORAGE_ADAPTER_S3_ASSET_HOST: ${storage_apiUrl}/${GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET}
       GHOST_STORAGE_ADAPTER_S3_ENDPOINT: ${storage_apiUrl}
       GHOST_STORAGE_ADAPTER_S3_FORCE_PATH_STYLE: true
@@ -41,6 +40,7 @@ services:
       database__connection__password: ${db_password}
       database__connection__user: ${db_user}
       url: ${zeropsSubdomain}
+      REGION: usc1
     ports:
       - port: 2368
         httpSupport: true
