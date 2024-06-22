@@ -26,5 +26,5 @@ services:
     enableSubdomainAccess: true
   - hostname: mailpit
     type: go@1
-    buildFromGit: https://github.com/zeropsio/recipe-mailpit
+    buildFromGit: https://github.com/zeropsio/recipe-mailpit@main
     enableSubdomainAccess: true
