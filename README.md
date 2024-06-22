@@ -1,0 +1,2 @@
+# recipe-ghost
+Ghost
