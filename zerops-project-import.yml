@@ -1,0 +1,30 @@
+project:
+  name: ghost-app
+  tags:
+    - Ghost
+    - Mailpit
+    - MariaDB
+    - MinIO
+services:
+  - hostname: db
+    type: mariadb@10.6
+    mode: NON_HA
+    priority: 2
+  - hostname: storage
+    type: object-storage
+    objectStorageSize: 2
+    objectStoragePolicy: public-objects-read
+    priority: 1
+  - hostname: ghost
+    type: nodejs@18
+    verticalAutoscaling:
+      cpuMode: SHARED
+      minCpu: 1
+      minRam: 1
+    minContainers: 1
+    buildFromGit: https://github.com/zeropsio/recipe-ghost@main
+    enableSubdomainAccess: true
+  - hostname: mailpit
+    type: go@1
+    buildFromGit: https://github.com/zeropsio/recipe-mailpit
+    enableSubdomainAccess: true

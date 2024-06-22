@@ -1,0 +1,6 @@
+{
+  "active-version": "5.82.1",
+  "cli-version": "1.26.0",
+  "channel": "stable",
+  "name": "ghost-process"
+}
