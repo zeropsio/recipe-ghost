@@ -30,10 +30,10 @@ zerops:
         GHOST_STORAGE_ADAPTER_S3_ASSET_HOST: ${storage_apiUrl}/${GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET}
         GHOST_STORAGE_ADAPTER_S3_ENDPOINT: ${storage_apiUrl}
         GHOST_STORAGE_ADAPTER_S3_FORCE_PATH_STYLE: true
-        database__connection__database: ${db_hostname}
-        database__connection__host: ${db_hostname}
-        database__connection__password: ${db_password}
-        database__connection__user: ${db_user}
+        database__connection__database: ${dbha_hostname}
+        database__connection__host: ${dbha_hostname}
+        database__connection__password: ${dbha_password}
+        database__connection__user: ${dbha_user}
         url: ${zeropsSubdomain}
         REGION: usc1
       ports:
