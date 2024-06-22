@@ -18,6 +18,17 @@ You can either click the deploy button to deploy directly on Zerops, or manually
 - Utilization of Zerops built-in **environment variables** system
 - [Mailpit](https://github.com/axllent/mailpit) as **SMTP mock server**
 
+## How to use installed recipe in Zerops GUI
+
+- Wait till the moment the recipe's services are installed and initialized.
+- Open the auto-generated subdomain URL available for the `ghost` service.
+- Switch to the admin client GUI through adding `/ghost` route to the subdomain URL.
+- Fill out the form to register as an administrator of the new Ghost site.
+- Open the auto-generated subdomain URL available for the `mailpit` service.
+- Check a confirmation email sent from the Ghost service.
+- Use installed and running Ghost CMS to publish articles.
+- Register new subscribers to consume the Ghost site content.
+
 ## Production vs. recipe mode
 
 The difference may come down to:
