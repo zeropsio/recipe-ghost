@@ -21,7 +21,8 @@ services:
       cpuMode: SHARED
       minCpu: 1
       minRam: 1
-    minContainers: 2
+    minContainers: 1
+    maxContainers: 1
     buildFromGit: https://github.com/zeropsio/recipe-ghost@ha
     enableSubdomainAccess: true
   - hostname: mailpit

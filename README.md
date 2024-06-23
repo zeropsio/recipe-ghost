@@ -33,9 +33,12 @@ You can either click the deploy button to deploy directly on Zerops, or manually
 
 The difference may come down to:
 
-- Use at least two containers for Ghost service to achieve high reliability and resilience (add `minContainers: 2` in recipe YAML, `ghost` service section).
 - Use the highly available version of the MariaDB database (change `mode` from `NON_HA` to `HA` in recipe YAML, `db` service section) when the Galera cluster is created.
 - Using `SET SESSION wsrep_sync_wait=1;` or changing the Galera cluster configuration by `wsrep_sync_wait=1` to force synchronization among database nodes because of the actual state of Ghost's support for database HA.
 - Use a production-ready third-party SMTP server instead of Mailpit.
+
+## Warning
+
+It's impossible to use more containers of Ghost services than one (like `minContainers: 2` in recipe YAML, `ghost` service section) because of the limitation of inner Ghost architecture. Otherwise different containers will return different results because of caching logic.
 
 Need help setting your project up? Join [Zerops Discord community](https://discord.com/invite/WDvCZ54).
