@@ -40,6 +40,6 @@ The difference may come down to:
 
 ## Warning
 
-It's impossible to use more containers of Ghost services than one (like `minContainers: 2` in recipe YAML, `ghost` service section) because of the limitation of inner Ghost architecture. Otherwise different containers will return different results because of caching logic.
+It's impossible to use more containers of Ghost services than one (like `minContainers: 2` in recipe YAML, `ghost` service section) because of the limitation of inner Ghost architecture. Otherwise, different containers will return different results because of caching logic after creating new content.
 
 Need help setting your project up? Join [Zerops Discord community](https://discord.com/invite/WDvCZ54).
