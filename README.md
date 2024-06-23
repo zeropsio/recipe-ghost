@@ -1,6 +1,6 @@
 # Zerops x Ghost CMS
 
-![Ghost](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/cover-ghost.png)
+![Ghost](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/png/cover-ghost.png)
 
 [Ghost](https://github.com/TryGhost/Ghost) is a full headless CMS and also an open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications. [Zerops](https://zerops.io) recipe for Ghost includes all necessary parts to demonstrate its power in Zerops environment.
 
