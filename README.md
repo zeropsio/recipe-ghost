@@ -34,7 +34,7 @@ You can either click the deploy button to deploy directly on Zerops, or manually
 The difference may come down to:
 
 - Use the highly available version of the MariaDB database (change `mode` from `NON_HA` to `HA` in recipe YAML, `db` service section) when the Galera cluster is created.
-- Using `SET SESSION wsrep_sync_wait=1;` or changing the Galera cluster configuration by `wsrep_sync_wait=1` to force synchronization among database nodes because of the actual state of Ghost's support for database HA.
+- Using `SET GLOBAL wsrep_sync_wait=1;` or changing the Galera cluster configuration by `wsrep_sync_wait=1` to force synchronization among database nodes because of the actual state of Ghost's support for database HA.
 - Use a production-ready third-party SMTP server instead of Mailpit.
 
 ## Warning
