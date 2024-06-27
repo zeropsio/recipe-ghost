@@ -1,8 +1,8 @@
 # Zerops x Ghost CMS
 
-![Ghost](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/png/cover-ghost.png)
-
 [Ghost](https://github.com/TryGhost/Ghost) is an open source blogging platform that can be used as a headless CMS. This recipe showcases how to properly setup and run Ghost on Zerops.
+
+![Ghost](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/png/cover-ghost.png)
 
 ## Deploy on Zerops
 
@@ -33,8 +33,7 @@ You can either click the deploy button to deploy directly on Zerops, or manually
 
 The difference may come down to:
 
-- Use the highly available version of the MariaDB database (change `mode` from `NON_HA` to `HA` in recipe YAML, `db` service section) when the Galera cluster is created.
-- Using `SET GLOBAL wsrep_sync_wait=1;` or changing the Galera cluster configuration by `wsrep_sync_wait=1` to force synchronization among database nodes because of the actual state of Ghost's support for database HA.
+- Use the highly available version of the MariaDB database (change `mode` from `NON_HA` to `HA` in recipe YAML, `db` service section) in which case Galera cluster is created. Use SQL command `SET GLOBAL wsrep_sync_wait=1;` to globally set the synchronization among database nodes because of the actual state of Ghost's support for database HA. The best place where to do it is in the `run.initCommands` of the [zerops.yml](https://github.com/zeropsio/recipe-ghost/blob/main/zerops.yml) file.
 - Think about some caching mechanism (such as Zerops KeyDB service, CDN) instead of the database HA mode because of the static character of the Ghost pages.
 - Use a production-ready third-party SMTP server instead of Mailpit.
 
