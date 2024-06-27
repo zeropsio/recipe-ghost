@@ -2,7 +2,7 @@
 
 ![Ghost](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/png/cover-ghost.png)
 
-[Ghost](https://github.com/TryGhost/Ghost) is a full headless CMS and also an open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications. [Zerops](https://zerops.io) recipe for Ghost includes all necessary parts to demonstrate its power in Zerops environment.
+[Ghost](https://github.com/TryGhost/Ghost) is an open source blogging platform that can be used as a headless CMS. This recipe showcases how to properly setup and run Ghost on Zerops.
 
 ## Deploy on Zerops
 
@@ -29,7 +29,7 @@ You can either click the deploy button to deploy directly on Zerops, or manually
 - Use installed and running Ghost CMS to publish articles.
 - Register new subscribers to consume the Ghost site content.
 
-## Production vs. recipe mode
+## Production vs. development mode
 
 The difference may come down to:
 
@@ -38,8 +38,8 @@ The difference may come down to:
 - Think about some caching mechanism (such as Zerops KeyDB service, CDN) instead of the database HA mode because of the static character of the Ghost pages.
 - Use a production-ready third-party SMTP server instead of Mailpit.
 
-## Warning
+> [!WARNING]
 
-It's impossible to use more containers of Ghost services than one (like `minContainers: 2` in recipe YAML, `ghost` service section) because of the limitation of inner Ghost architecture. Otherwise, different containers will return different results because of caching logic after creating new content.
+Ghost does not support high availability (running on multiple container), make sure vertical autoscaling is fixed on 1 container (default in this recipe).
 
 Need help setting your project up? Join [Zerops Discord community](https://discord.com/invite/WDvCZ54).
