@@ -38,7 +38,6 @@ The difference may come down to:
 - Use a production-ready third-party SMTP server instead of Mailpit.
 
 > [!WARNING]
-
-Ghost does not support high availability (running on multiple container), make sure vertical autoscaling is fixed on 1 container (default in this recipe).
+> Ghost does not support high availability (running on multiple container), make sure vertical autoscaling is fixed on 1 container (default in this recipe).
 
 Need help setting your project up? Join [Zerops Discord community](https://discord.com/invite/WDvCZ54).
