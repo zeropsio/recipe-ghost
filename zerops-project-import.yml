@@ -19,7 +19,7 @@ services:
     verticalAutoscaling:
       minRam: 1
     maxContainers: 1
-    buildFromGit: https://github.com/zeropsio/recipe-ghost@main
+    buildFromGit: https://github.com/zeropsio/recipe-ghost@v6.10.3
     enableSubdomainAccess: true
 
   - hostname: mailpit
