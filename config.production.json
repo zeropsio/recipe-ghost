@@ -19,6 +19,9 @@
     ]
   },
   "process": "local",
+  "security": {
+    "staffDeviceVerification": false
+  },
   "paths": {
     "contentPath": "./content"
   },

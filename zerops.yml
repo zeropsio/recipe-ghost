@@ -1,7 +1,7 @@
 zerops:
   - setup: ghost
     build:
-      base: nodejs@18
+      base: nodejs@22
       # os: ubuntu
       buildCommands:
         - sudo apk add git jq
@@ -19,7 +19,7 @@ zerops:
         - .ghost-cli
         - config.production.json
     run:
-      base: nodejs@18
+      base: nodejs@22
       # os: ubuntu
       envVariables:
         AWS_DEFAULT_REGION: us-east-1

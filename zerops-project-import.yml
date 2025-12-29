@@ -15,7 +15,7 @@ services:
     priority: 1
 
   - hostname: ghost
-    type: nodejs@18
+    type: nodejs@22
     verticalAutoscaling:
       minRam: 1
     maxContainers: 1
